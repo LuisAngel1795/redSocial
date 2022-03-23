@@ -1,0 +1,34 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: servicio-usuarios
+        uri: lb://servicio-usuarios
+        predicates:
+          - Path=/api/usuarios/**
+        filters:
+          - StripPrefix=2
+      - id: servicio-libros
+        uri: lb://servicio-libros
+        predicates:
+          - Path=/api/libros/**
+        filters:
+          - StripPrefix=2
+      - id: servicio-biblioteca
+        uri: lb://servicio-biblioteca
+        predicates:
+          - Path=/api/biblioteca/**
+        filters:
+          - StripPrefix=2
+      - id: servicio-red
+        uri: lb://servicio-red
+        predicates:
+          - Path=/api/red/**
+        filters:
+          - StripPrefix=2
+      - id: servicio-publicaciones
+        uri: lb://servicio-publicaciones
+        predicates:
+          - Path=/api/publicaciones/**
+        filters:
+          - StripPrefix=2

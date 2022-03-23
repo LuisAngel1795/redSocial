@@ -1,0 +1,38 @@
+usuario
+libro
+biblioteca(idUsuario, idLibro)
+Red
+	usuario:
+	{},
+	libros[{},{}],
+	totalLibros,
+	amigos:[{usuario:{},libros:[],totalLibros},AmigosEnComun:[usuario[],TotalAmigosEnComun:]]	
+	totalAmigos:
+		
+post (Recomendaciones de libro)
+	-id pk
+	-titulo	
+	-contenido
+	-fecha_creacion
+	-author_id
+
+comentarios (sobe publicaciones)
+	-id_comentario pk
+	-contenido
+	-author_id fk
+	-id_post fk
+	-fecha_creacion
+	
+	
+comando linux
+	comando para ver los puertos que estan siendo usados
+		sudo lsof -i -P -n | grep LISTEN
+		
+	comando para iniciar el servicioo de postgres
+	systemctl start postgresql
+
+en windows
+conectar a postgres desde la terminal
+	psql -U usuario db_name
+cambiar entre bases de datos
+	\c db_name
